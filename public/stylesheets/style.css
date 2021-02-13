@@ -1,11 +1,10 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00b7ff; }
-
-h1 {
-  color: 15px; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+}   
 
 /*# sourceMappingURL=style.css.map */
+
+.picsize {
+  width: 22rem;
+  height: 16rem;
+}
