@@ -74,50 +74,16 @@ List of other features outside of the MVPs scope
 Models:
 
 Users-Model
-user = {
-firstName: String,
-lastName: String,
-email: {
-type: String,
-required: true,
-unique: true
-},
-password: String,
-talents: {
-type: [String], -> s. below
-required: true
-},
-description: String
-}
-
-
-Requests-Model
-Request = {
-requested: {
-type: Schema.User.ObjectId, ref: “user”
-},
-searcher: {
-type: Schema.User.ObjectId, ref: “user”
-}
-status: [“pending”, “active”, “deny”] 
-request_date: Date,
-message: String,
-
-}
-
-requested_talent: String
-
+Request-Model
 
 
 ## Links
 
 ### Kanban-Board
-
 https://docs.google.com/document/d/16fhEgIYyw7nU6bwfe7tQPKYRoL6PbPT_oQ7d2tkMo4E/edit?usp=sharing
 
 
 ### Git
-
 The url to your repository and to your deployed project
 
 [Repository Link](https://github.com/MattBrwn/talentXchange)
