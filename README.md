@@ -22,8 +22,7 @@ talentXchange is a platform to offer and search for services in a nonprofit way.
 
 List of other features outside of the MVPs scope
 
-User profile:
-- messaging
+- exchange of messages
 - upload profile picture
 - create logo
 
