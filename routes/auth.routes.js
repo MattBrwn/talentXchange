@@ -79,11 +79,11 @@ router.post("/login", (req, res, next) => {
                             // when the user successfully signs up
                             req.session.userData = result
                             req.session.areyoutired = false
-                            res.redirect('/profile')
+                            res.redirect('overview')
                         }
                         else {
                             // when passwords don't match
-                            res.render('auth/login.hbs', {msg: 'Passwords dont match'})
+                            res.render('/login.hbs', {msg: 'Passwords dont match'})
                         }
                     })
             }
@@ -112,9 +112,9 @@ const checkLoggedInUser = (req, res, next) => {
      
 }
 
-router.get('/profile', checkLoggedInUser, (req, res, next) => {
+router.get('/ownprofile', checkLoggedInUser, (req, res, next) => {
     let email = req.session.userData.email
-    res.render('profile.hbs', {email })
+    res.render('ownprofile.hbs', {email })
 })
 
 
