@@ -21,7 +21,7 @@ router.get("/userprofile", (req, res, next) => {
 
 
 /* GET OVERVIEW PAGE */
-router.get("/overview", (req, res, next) => {
+router.get("/overview", (req, res) => {
   //protected page 
   res.render('overview.hbs')
 });
