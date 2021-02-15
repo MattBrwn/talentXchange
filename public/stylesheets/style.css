@@ -1,8 +1,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  background-color: rgb(228, 228, 228);
 }   
 
-# sourceMappingURL=style.css.map
+/* # sourceMappingURL=style.css.map */
 
 .picsize {
   width: 22rem;
