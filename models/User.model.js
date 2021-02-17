@@ -17,7 +17,7 @@ let UserSchema = new mongoose.Schema({
   },
   talents: {
     type: String,
-    required: true
+    //required: true
   },
   description: String
 });

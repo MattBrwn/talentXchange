@@ -1,1 +1,23 @@
 <h1>This is your own profile site</h1>
+<h3>Your Name: {{name}}</h3>
+
+<div class="container row">
+  <form class="col-4" method="POST" action="/ownprofile">
+    <h3>Your actual talent is: {{talents}}</h3> 
+    <select class="btn-sm btn-light form-group mt-3 mb-4" id="talent1" name="talents">
+      <option value="">choose talent</option>
+      <option value="Private tutoring">Private tutoring</option>
+      <option value="Removal">Removal</option>
+      <option value="Gardening">Gardening</option> 
+      <option value="Household / Housekeeping">Household / Housekeeping</option> 
+      <option value="Office">Office</option>
+      <option value="Shoppingaid">Shoppingaid</option>
+      <option value="Elderpeople">Elderpeople</option>
+    </select>     
+    <div class="input-group">
+      <textarea class="form-control" id="description" aria-label="With textarea" name="description">{{description}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">save changes</button>
+  </form>
+</div>
+      

@@ -1,1 +1,13 @@
-<h1>This is the user profile site</h1>
+<h1>This is the user profile site of {{user.name}}</h1>
+
+<h3>Description: {{user.description}}</h3>
+
+<div class="container row">
+  <form class="col-4" method="POST" action="/userprofile/{{user._id}}">
+    <div class="input-group">
+      <textarea class="form-control" id="message" aria-label="With textarea" name="message" placeholder="message text" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send request</button>
+  </form>
+</div>
+      

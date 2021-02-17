@@ -40,22 +40,23 @@ router.post("/signup", (req, res, next) => {
      }
 
      //validate password (special character, some numbers, min 6 length)
-     /*
-     let regexPass = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/;
-     if (!regexPass.test(password)) {
-        res.render('auth/signup', {msg: 'Password needs to have special chanracters, some numbers and be 6 characters aatleast'})
-        return;
-     }
+     
+    //  let regexPass = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/;
+    //  if (!regexPass.test(password)) {
+    //     res.render('auth/signup', {msg: 'Password needs to have special chanracters, some numbers and be 6 characters aatleast'})
+    //     return;
+    //  }
 
-     */
+  
 
      // NOTE: We have used the Sync methods here. 
      // creating a salt 
      let salt = bcrypt.genSaltSync(10);
      let hash = bcrypt.hashSync(password, salt);
      UserModel.create({name, email, password: hash})
-        .then(() => {
-            res.redirect('/')
+        .then((user) => {
+            // req.session.userData = user
+            res.redirect('/ownprofile')
         })
         .catch((err) => {
             next(err)
@@ -77,9 +78,10 @@ router.post("/login", (req, res, next) => {
                     .then((isMatching) => {
                         if (isMatching) {
                             // when the user successfully signs up
-                            req.session.userData = result
-                            req.session.areyoutired = false
-                            res.redirect('overview')
+                             req.session.userData = result
+                            //req.session.areyoutired = false
+                            //console.log(result)
+                            res.redirect('/overview')
                         }
                         else {
                             // when passwords don't match
@@ -113,8 +115,9 @@ const checkLoggedInUser = (req, res, next) => {
 }
 
 router.get('/ownprofile', checkLoggedInUser, (req, res, next) => {
-    let email = req.session.userData.email
-    res.render('ownprofile.hbs', {email })
+    let email = req.session.userData.email;
+    let name = req.session.userData.name
+    res.render('ownprofile.hbs', {email} )
 })
 
 
