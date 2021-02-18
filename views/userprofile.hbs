@@ -1,13 +1,18 @@
-<h1>This is the user profile site of {{user.name}}</h1>
+<h3 class="mt-4 mb-5">Profile of {{user.name}} </h3>
 
-<h3>Description: {{user.description}}</h3>
+<h5>Description: {{user.description}}</h5>
 
 <div class="container row">
   <form class="col-4" method="POST" action="/userprofile/{{user._id}}">
-    <div class="input-group">
+    <div class="form-group mt-3 mb-4">
       <textarea class="form-control" id="message" aria-label="With textarea" name="message" placeholder="message text" ></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Send request</button>
+    <div class="form-group mt-3 mb-4">
+      <button type="submit" class="form-group btn btn-primary">Send request</button>
+    </div>
   </form>
+  <div>
+    <a href="/results/{{user.talents}}" class="btn btn-secondary"> Search results </a>
+  </div>
 </div>
       

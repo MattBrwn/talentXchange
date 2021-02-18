@@ -1,7 +1,6 @@
-<h1>This is the results site</h1>
-
-<h3>Results/Users for search talent: {{searchtalent}}</h3>
-
-{{#each result}}
-  <a href="/userprofile/{{this._id}}/{{searchtalent}}">{{this.name}}</a>
-{{/each}} 
+<h3 class="mt-4 mb-5"> Search results for talent: {{searchtalent}} </h3>
+<div class=container>
+  {{#each result}}
+    <a href="/userprofile/{{this._id}}" class="btn btn-primary"> {{this.name}} </a>
+  {{/each}}
+</div>

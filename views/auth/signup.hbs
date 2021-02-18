@@ -2,53 +2,26 @@
   <form class="col-4" method="POST" action="/signup">
     <div class="form-group mt-4 mb-3">
       <label for="exampleInputUsername"> User name </label>
-      <input type="text" name="name" class="form-control" id="exampleInputUsername" aria-describedby="nameHelp" placeholder="Enter your name">
+      <input type="text" name="name" class="form-control" id="exampleInputUsername" aria-describedby="nameHelp"
+        placeholder="Enter your name">
     </div>
     <div class="form-group mt-4 mb-3">
       <label for="exampleInputEmail1"> Email address </label>
-      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter your email">
     </div>
     <div class="form-group mt-3 mb-2">
       <label for="exampleInputPassword1"> Password </label>
-      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+        placeholder="Enter your password">
     </div>
-   {{!-- <select class="btn-sm btn-light form-group mt-3 mb-4" id="talent1">
-      <option value="-1">Choose talent</option>
-      <option value="0">Private tutoring</option>
-      <option value="1">Removal</option>
-      <option value="2">Gardening</option> 
-      <option value="3">Household / Housekeeping</option> 
-    </select>     
-    <select class="btn-sm btn-light form-group mt-3 mb-4" id="talent2">
-      <option value="-1">Choose talent</option>
-      <option value="0">Private tutoring</option>
-      <option value="1">Removal</option>
-      <option value="2">Gardening</option> 
-      <option value="3">Household / Housekeeping</option> 
-    </select>     
-    <select class="btn-sm btn-light form-group mt-3 mb-4" id="talent3">
-      <option value="-1">Choose talent</option>
-      <option value="0">Private tutoring</option>
-      <option value="1">Removal</option>
-      <option value="2">Gardening</option> 
-      <option value="3">Household / Housekeeping</option> 
-    </select>     
-    <div class="input-group">
-      <textarea class="form-control" id="description" placeholder="Your self description" aria-label="With textarea"></textarea>
-    </div> --}}
     <div class="form-group mt-3 mb-4">
       <button type="submit" class="btn btn-primary"> Create account </button>
     </div>
   </form>
 </div>
 
-
-
-
-
-
-
 {{!-- Conditionally render the msg --}}
 {{#if msg}}
- <div class="error">{{msg}}</div>
+<div class="error"> {{msg}} </div>
 {{/if}}
