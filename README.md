@@ -9,13 +9,14 @@ talentXchange is a platform to offer and search for services in a nonprofit way.
 
 **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault 
 **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
-**homepage** - As a user I want to be able to access the homepage so that I see what the app is about and header for Log-In/Log-Out/delete-button,  (Logo) and “Sign Up”- button and  “Learn more”-button -> “search results” page. Header (for all pages drop-down-menue for search)
+**homepage** - As a user I want to be able to access the homepage so that I see what the app is about.  “Sign Up”- button  
+**Header** for all pages drop-down-menue for search of talents and for user (Log-In/Log-Out/Edit/Delete). Link to Homepage.
 **sign up** - sign up.
-**login** - to be able to log in on the webpage so that I can get back to my account (after sign up was successful) / editing/changing profil.
+**login** - to be able to log in on the webpage so that I can get back to my account (after sign up was successful).
 **search results** - link to show (other) user.
 **user profil**-  (others) with opportunity to send message for request.
-**own profil**-  with button to “save”.
-**profil status**- status (pending/active/denied) of other’s and own requests.  
+**own profil**-  with button to “save changes”.
+**request status**- list of requests with status (pending).  
 
 
 ## Backlog
@@ -31,42 +32,56 @@ List of other features outside of the MVPs scope
 
 - GET / 
   - renders the homepage
+
 - GET /auth/signup
-  - redirects to / if user logged in
-  - renders the signup form (with flash msg)
+  - redirects to signup/ if user logged in
+  - renders the signup form 
 - POST /auth/signup
-  - redirects to / if user logged in
+  - redirects to own profile / if user logged in
   - body:
     - username
     - email
     - password
+
 - GET /auth/login
-  - redirects to / if user logged in
-  - renders the login form (with flash msg)
+  - redirects to login / if user logged in
+  - renders the login form
 - POST /auth/login
-  - redirects to / if user logged in
+  - redirects to overview / if user logged in
   - body:
-    - username
+    - email
     - password
+
 - POST /auth/logout
+  - redirects to home/index
   - body: (empty)
 
-- GET /events
-  - renders the event list + the create form
-- POST /events/create 
-  - redirects to / if user is anonymous
+- GET /ownprofile
+  - renders ownprofile (form to edit/change profile)
+- POST /ownprofile 
+  - redirects to overview
   - body: 
-    - name
-    - date
-    - location
+    - talents
     - description
-- GET /events/:id
-  - renders the event detail page
-  - includes the list of attendees
-  - attend button if user not attending yet
-- POST /events/:id/attend 
-  - redirects to / if user is anonymous
-  - body: (empty - the user is already stored in the session)
+
+- GET /userprofile/:id
+  - renders user profile
+  - option to send message
+- POST /userprofile/:id/ 
+  - redirects to overview
+  - create request
+
+- GET /overview
+  - renders to overview
+  - display requests
+
+- GET /delete
+  - redirects to home/index
+
+- GET /results
+  - renders to results
+  - displays user, which fits search for talent
+
 
 
 ## Models
@@ -85,15 +100,11 @@ https://docs.google.com/document/d/16fhEgIYyw7nU6bwfe7tQPKYRoL6PbPT_oQ7d2tkMo4E/
 
 ### Git
 The url to your repository and to your deployed project
-
 [Repository Link](https://github.com/MattBrwn/talentXchange)
-
-[Deploy Link](http://heroku.com)
+[Deploy Link](https://talentxchange.herokuapp.com/)
 
 ### Slides
 
 The url to your presentation slides
-
-[Slides Link](http://slides.com)
+[Slides Link](https://docs.google.com/presentation/d/1-vZDkPIz9YRhDFOT526WCyF3zDnIdr8xgYRXqHH5szY/edit?usp=sharing)
 [wireframes] (https://docs.google.com/drawings/d/1V7kjmmZ97r4U1Fn3PuQh6A4acFe3j3YfWxXE3OVXQSs/edit?usp=sharing)
-[Kanban-Board] (https://docs.google.com/document/d/16fhEgIYyw7nU6bwfe7tQPKYRoL6PbPT_oQ7d2tkMo4E/edit?usp=sharing)
