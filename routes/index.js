@@ -26,9 +26,9 @@ router.get(
     UserModel.findById(userId)
       .then(
         (user) => {
-          let name = user.name; // what is when talents is not defined
+          let name = user.name; 
           let talents = user.talents; // what is when talents is not defined
-          let description = user.description; // what is when talents is not defined
+          let description = user.description;
           res.render(
             "ownprofile.hbs",
             { name, talents, description }
@@ -53,7 +53,7 @@ router.post(
     let userRequirements = {
       talents,
       description
-    }
+    };
     UserModel.findByIdAndUpdate(userId, userRequirements)
       .then(
         (user) => {
